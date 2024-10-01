@@ -128,3 +128,12 @@ window.addEventListener('load', function() {
 
 window.addEventListener('scroll', revealOnScroll);
 revealOnScroll(); // to show elements on load if already in view
+
+ document.querySelector('.Btn').addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Smooth scroll effect
+        });
+    
+});
+
