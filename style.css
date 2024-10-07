@@ -383,6 +383,7 @@ h3 {
 .card__links .link:hover {
     text-decoration: underline;
 }
+
 #backToTopBtn {
     display: none; /* Initially hidden */
     position: fixed; /* Fixed position at the bottom-right corner */
