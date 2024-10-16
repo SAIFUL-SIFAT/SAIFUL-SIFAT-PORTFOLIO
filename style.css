@@ -152,7 +152,10 @@ nav ul li a:hover {
     justify-content: center;
     align-items: center;
     padding: 0 100px;
+<<<<<<< HEAD
 
+=======
+>>>>>>> ba478270a5a4ccab8c9733180743b3c5a87e890c
 }
 
 span {
@@ -251,7 +254,10 @@ span {
     justify-content: center;
     align-items: flex-start;
     margin: 20px;
+<<<<<<< HEAD
 
+=======
+>>>>>>> ba478270a5a4ccab8c9733180743b3c5a87e890c
 }
 
 .left-panel {
@@ -390,7 +396,10 @@ h3 {
 .card__links .link:hover {
     text-decoration: underline;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> ba478270a5a4ccab8c9733180743b3c5a87e890c
 #backToTopBtn {
     display: none; /* Initially hidden */
     position: fixed; /* Fixed position at the bottom-right corner */
