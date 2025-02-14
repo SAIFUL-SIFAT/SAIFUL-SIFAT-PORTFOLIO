@@ -91,7 +91,7 @@ nav {
     background-color: #0a192f;
 }
 
-.brand-name a {
+
 .brand-name a {
     color: #ccd6f6;
     text-decoration: none;
@@ -406,14 +406,15 @@ h3 {
 } */
 .project_section {
     padding: 40px 20px;
-    /* margin: 0 auto; */
   }
   
   .project-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     grid-gap: 20px;
     justify-content: center;
+    margin: 0 auto;
+    
     /* align-items: stretch; */
   }
   
@@ -533,55 +534,6 @@ h3 {
         opacity: 1;
     }
   }
-  /* Responsive Styles */
-@media (max-width: 768px) {
-    .about-container {
-        flex-direction: column; /* Stack panels on smaller screens */
-        margin: 20px;
-    }
-
-    .left-panel {
-        margin: 0; /* Remove left margin */
-        width: 100%; /* Full width */
-    }
-
-    .right-panel {
-        margin: 20px 0 0 0; /* Space above */
-        width: 100%; /* Full width */
-    }
-
-    #home {
-        height: auto; /* Allow height to adjust */
-        padding: 20px; /* Add padding */
-    }
-
-    .nav-links {
-        flex-direction: column; /* Stack navigation links vertically */
-    }
-
-    nav ul {
-        flex-direction: column; /* Stack navigation links */
-        align-items: flex-start; /* Align items to start */
-    }
-
-    nav ul li {
-        margin: 10px 0; /* Space between links */
-    }
-
-    .project-cards {
-        flex-direction: column; /* Stack project cards vertically */
-        align-items: center; /* Center cards */
-    }
-
-    .card {
-        width: 90%; /* Full width with margin */
-        margin: 10px 0; /* Space between cards */
-    }
-}
-
-/* Smooth Scrolling */
-html {
-    scroll-behavior: smooth; /* Enable smooth scrolling */
-}
-
-  
+html{
+    scroll-behavior: smooth;    
+}  
