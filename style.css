@@ -87,75 +87,119 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 20px 40px;
     background-color: #0a192f;
 }
 
 .brand-name a {
+.brand-name a {
     color: #ccd6f6;
     text-decoration: none;
-    font-size: 1.5em;
+    font-size: 1.8rem;
     font-weight: bold;
-    margin-left: 30px;
-    margin-bottom: 20px;
 }
 
-.brand-name {
-    margin-bottom: 10px;
-    margin-left: 50px;
-    padding-left: 10px;
-}
-
-nav ul {
+.nav-links {
+    display: flex;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    display: flex;
 }
 
-nav ul li {
-    margin: 0 15px;
+.nav-links li {
+    margin: 0 20px;
 }
 
-nav ul li a {
+.nav-links li a {
     color: #ccd6f6;
     text-decoration: none;
-    font-size: 1.2em;
+    font-size: 1.4rem;
 }
 
-nav ul li a:hover {
+.nav-links li a:hover {
     color: #64ffda;
 }
 
 .social-icons {
     display: flex;
     align-items: center;
-    margin-right: 30px;
 }
 
 .social-icons a {
     color: #ccd6f6;
-    margin: 0 10px;
-    font-size: 1.5em;
+    margin: 0 12px;
+    font-size: 1.6rem;
+    text-decoration: none;
 }
 
 .social-icons a:hover {
     color: #64ffda;
 }
 
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav {
+        padding: 15px 20px;
+    }
+
+    .brand-name a {
+        font-size: 1.5rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .social-icons a {
+        font-size: 1.4rem;
+        margin: 0 8px;
+    }
+}
+
 /* Home Section */
 #home {
     background-color: #0a192f;
-    height: 80vh;
+    min-height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0 100px;
-<<<<<<< HEAD
+    padding: 40px;
+    position: relative; /* Make the #home section a positioned element */
+}
 
-=======
->>>>>>> ba478270a5a4ccab8c9733180743b3c5a87e890c
+h1 {
+    font-size: 2.5rem; /* Increase the font size for the heading */
+    margin-bottom: 10px; /* Add some space between the heading and the paragraph */
+}
+
+p {
+    font-size: 1.2rem; /* Increase the font size for the paragraphs */
+    margin-bottom: 20px; /* Add some space between the paragraphs */
+}
+
+.button {
+    padding: 10px 20px; /* Adjust the button padding */
+    font-size: 1rem; /* Adjust the button font size */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #home {
+        padding: 20px; /* Reduce the padding on smaller screens */
+    }
+
+    .floating-pic img {
+        max-width: 150px; /* Reduce the image size on smaller screens */
+    }
+
+    h1 {
+        font-size: 2rem; /* Reduce the heading font size on smaller screens */
+    }
+
+    p {
+        font-size: 1rem; /* Reduce the paragraph font size on smaller screens */
+    }
 }
 
 span {
@@ -168,22 +212,37 @@ span {
 }
 
 .floating-pic {
-    position: absolute; /* Position relative to the section */
-    top: 100px; /* Adjust as needed */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Center horizontally */
-    z-index: 10; /* Ensure it's above other content */
+    position: absolute;
+    top: 30px; 
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
 }
-
 .floating-pic img {
-    width: 150px; /* Adjust size as needed */
-    height: 150px; /* Make it square by setting height equal to width */
-    border-radius: 20px; /* Adjust radius for rounded corners */
-    object-fit: cover; /* Ensure the image covers the area without distortion */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: adds shadow for a floating effect */
+    max-width: 200px;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Button Styles */
+@media (max-width: 768px) {
+    #home {
+        padding: 20px;
+    }
+
+    .floating-pic {
+        top: 30px; /* Adjust the top position for smaller screens */
+    }
+
+    .floating-pic img {
+        max-width: 100px; /* Reduce the image size on smaller screens */
+    }
+
+    /* Other responsive styles */
+}
+
+
+/* From Uiverse.io by Randdose */ 
 .button {
     all: unset;
     display: flex;
@@ -253,13 +312,31 @@ span {
     height: 50vh;
     justify-content: center;
     align-items: flex-start;
-    margin: 20px;
-<<<<<<< HEAD
-
-=======
->>>>>>> ba478270a5a4ccab8c9733180743b3c5a87e890c
+    margin : 20px
 }
-
+.logo-marquee {
+    width: 100%;
+    display: flex;
+    animation: marquee 40s linear infinite;
+  }
+  
+  .logo-container {
+    display: flex;
+    justify-content: space-between;
+    width: 300%;
+    animation-delay: -20s;
+  }
+  
+  .logo-container a {
+    margin-right: 40px;
+  }
+  
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-66.66%); }
+  }
+  
+  
 .left-panel {
     flex: 1;
     display: flex;
@@ -320,108 +397,120 @@ h3 {
     border-radius: 5px;
 }
 
-/* Section */
-.section {
+/*  Section */
+
+/* .section {
     text-align: center;
     padding: 60px 0;
     position: relative;
-}
-
-.project-cards {
-    display: flex;
-    justify-content: center; /* Center the cards horizontally */
-    align-items: center; /* Center the cards vertically */
-    flex-wrap: wrap; /* Wrap the cards if necessary */
-}
-
-.card {
+} */
+.project_section {
+    padding: 40px 20px;
+    /* margin: 0 auto; */
+  }
+  
+  .project-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    justify-content: center;
+    /* align-items: stretch; */
+  }
+  
+  .card {
     --font-color: #959595;
-    --bg-color: #0a192f;
-    width: 300px;
+    --bg-color: #112240;
     border-radius: 20px;
     background: var(--bg-color);
-    box-shadow: -9px 9px 18px #5a5a5a;
+    /* box-shadow: -9px 9px 18px #5a5a5a,
+                9px -9px 18px #ffffff; */
     display: flex;
     flex-direction: column;
-    transition: .4s;
+    justify-content: space-between;
     padding: 20px;
-    margin: 20px; /* Add margin to create spacing between cards */
-}
-
-.card:hover {
-    transform: scale(1.02);
-    box-shadow: 0px 0px 10px 2px #5a5a5a;
-}
-
-.card__descr-wrapper {
-    padding: 15px;
-    display: grid;
-    align-items: center;
-}
-
-.card__title {
+  }
+  
+  .card__descr-wrapper {
+    flex-grow: 1;
+  }
+  
+  .card__title {
     color: var(--font-color);
-    text-align: center;
-    margin-bottom: 15px;
     font-weight: 900;
     font-size: 20px;
-}
-
-.card__descr {
+    margin-bottom: 15px;
+  }
+  
+  .card__descr {
     color: var(--font-color);
     font-size: 16px;
-}
-
-.svg {
-    width: 25px;
-    height: 25px;
-    transform: translateY(25%);
-    fill: var(--font-color);
-}
-
-.card__links {
-    margin-top: 10px;
+  }
+  
+  .card__links {
     display: flex;
-    justify-content: space-between;
-    align-self: flex-end;
-}
-
-.card__links .link {
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+  
+  .card__links .link {
     color: var(--font-color);
     font-weight: 600;
     font-size: 15px;
     text-decoration: none;
-}
-
-.card__links .link:hover {
+  }
+  
+  .card__links .link:hover {
     text-decoration: underline;
-}
-<<<<<<< HEAD
-
-=======
->>>>>>> ba478270a5a4ccab8c9733180743b3c5a87e890c
-#backToTopBtn {
-    display: none; /* Initially hidden */
-    position: fixed; /* Fixed position at the bottom-right corner */
-    bottom: 20px;
-    right: 30px;
-    z-index: 99; /* On top of other elements */
-    font-size: 18px;
-    border: none;
-    outline: none;
-    background-color: #64ffda; /* Your requested color */
-    color: white;
+  }
+  
+  
+/* From Uiverse.io by vinodjangid07 */ 
+/* Button Styles */
+.Btn {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(#44ea76, #39fad7);
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
     cursor: pointer;
-    padding: 15px;
-    border-radius: 50px;
-    transition: background-color 0.3s ease;
+    position: fixed; /* Change to fixed for positioning */
+    right: 20px; /* Position from the right */
+    bottom: 20px; /* Position from the bottom */
+    border: none;
+    z-index: 1000; /* Ensure it stays above other elements */
 }
 
-#backToTopBtn:hover {
-    background-color: #555; /* Slightly darker on hover */
+.arrow path {
+    fill: white;
 }
 
+.text {
+    font-size: 0.7em;
+    width: 100px;
+    position: absolute;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: -18px;
+    opacity: 0;
+    transition-duration: .7s;
+    font-size: 14px;
+}
 
+.Btn:hover .text {
+    opacity: 1;
+    transition-duration: .7s;
+}
+
+.Btn:hover .arrow {
+    animation: slide-in-bottom .7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+/* Animation for the arrow */
 @keyframes slide-in-bottom {
     0% {
         transform: translateY(10px);
@@ -433,94 +522,66 @@ h3 {
     }
 }
 
-/* Media Queries for Responsiveness */
-@media (max-width: 1200px) {
-    #home {
-        margin: 0 100px;
+  
+  @keyframes slide-in-bottom {
+    0% {
+        transform: translateY(10px);
+        opacity: 0;
     }
-    .left-panel {
-        margin: 50px 0 0 100px;
+    100% {
+        transform: translateY(0);
+        opacity: 1;
     }
-    .right-panel {
-        margin: 40px 50px 0 0;
-    }
-}
-
-@media (max-width: 992px) {
-    .loader {
-        --cell-size: 40px;
-    }
-    h1 {
-        font-size: 2.5em;
-    }
-    p {
-        font-size: 1.5em;
-    }
-    nav ul li {
-        margin: 0 10px;
-    }
-    #home {
-        margin: 0 20px;
-    }
-    .left-panel {
-        margin: 50px 0 0 20px;
-    }
-    .right-panel {
-        margin: 40px 20px 0 0;
-    }
-}
-
+  }
+  /* Responsive Styles */
 @media (max-width: 768px) {
-    .loader {
-        --cell-size: 30px;
-    }
-    h1 {
-        font-size: 2em;
-    }
-    p {
-        font-size: 1.2em;
-    }
     .about-container {
-        flex-direction: column;
-    }
-    .left-panel, .right-panel {
+        flex-direction: column; /* Stack panels on smaller screens */
         margin: 20px;
     }
-}
 
-@media (max-width: 576px) {
-    .loader {
-        --cell-size: 25px;
+    .left-panel {
+        margin: 0; /* Remove left margin */
+        width: 100%; /* Full width */
     }
-    h1 {
-        font-size: 1.5em;
+
+    .right-panel {
+        margin: 20px 0 0 0; /* Space above */
+        width: 100%; /* Full width */
     }
-    p {
-        font-size: 1em;
+
+    #home {
+        height: auto; /* Allow height to adjust */
+        padding: 20px; /* Add padding */
     }
+
+    .nav-links {
+        flex-direction: column; /* Stack navigation links vertically */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack navigation links */
+        align-items: flex-start; /* Align items to start */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Space between links */
+    }
+
+    .project-cards {
+        flex-direction: column; /* Stack project cards vertically */
+        align-items: center; /* Center cards */
+    }
+
     .card {
-        width: 90%; /* Make cards responsive */
+        width: 90%; /* Full width with margin */
+        margin: 10px 0; /* Space between cards */
     }
 }
-/* Back to Top Button Styles */
-#backToTopBtn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 99; /* Ensure it's on top of other elements */
-    font-size: 18px;
-    background-color: #64ffda; /* Button color */
-    color: #0a192f;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 15px;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: opacity 0.3s;
-    display: none; /* Initially hidden */
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth; /* Enable smooth scrolling */
 }
 
-#backToTopBtn:hover {
-    background-color: #53f1f0; /* Slight color change on hover */
-}
+  

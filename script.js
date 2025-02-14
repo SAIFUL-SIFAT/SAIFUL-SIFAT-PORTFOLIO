@@ -80,7 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 document.addEventListener("DOMContentLoaded", function() {
-    // Smooth scrolling is already handled by CSS
     const navLinks = document.querySelectorAll('.nav-links a');
     const sections = document.querySelectorAll('section');
 
@@ -115,6 +114,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
 window.addEventListener('load', function() {
     const loader = document.querySelector('.loader');
     const mainContent = document.getElementById('main-content');
