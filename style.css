@@ -410,7 +410,7 @@ h3 {
   
   .project-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 20px;
     justify-content: center;
     margin: 0 auto;
@@ -534,6 +534,7 @@ h3 {
         opacity: 1;
     }
   }
+  
 html{
     scroll-behavior: smooth;    
 }  
