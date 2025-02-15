@@ -165,81 +165,90 @@ nav {
     justify-content: center;
     align-items: center;
     padding: 40px;
-    position: relative; /* Make the #home section a positioned element */
-}
-
-h1 {
-    font-size: 2.5rem; /* Increase the font size for the heading */
-    margin-bottom: 10px; /* Add some space between the heading and the paragraph */
-}
-
-p {
-    font-size: 1.2rem; /* Increase the font size for the paragraphs */
-    margin-bottom: 20px; /* Add some space between the paragraphs */
-}
-
-.button {
-    padding: 10px 20px; /* Adjust the button padding */
-    font-size: 1rem; /* Adjust the button font size */
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    #home {
-        padding: 20px; /* Reduce the padding on smaller screens */
-    }
-
-    .floating-pic img {
-        max-width: 150px; /* Reduce the image size on smaller screens */
-    }
-
-    h1 {
-        font-size: 2rem; /* Reduce the heading font size on smaller screens */
-    }
-
-    p {
-        font-size: 1rem; /* Reduce the paragraph font size on smaller screens */
-    }
-}
-
-span {
-    color: #64ffda;
-}
-
-.section {
     position: relative;
-    padding-top: 100px; /* Adjust based on your image height */
-}
-
-.floating-pic {
+  }
+  
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .name-profession {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    #home {
+      padding: 20px;
+    }
+  
+    .floating-pic img {
+      max-width: 150px;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    p {
+      font-size: 1rem;
+    }
+  }
+  
+  span {
+    color: #64ffda;
+  }
+  
+  .floating-pic {
     position: absolute;
-    top: 30px; 
+    top: 30px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
-}
-.floating-pic img {
+  }
+  
+  .floating-pic img {
     max-width: 200px;
     border-radius: 20px;
     object-fit: cover;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-@media (max-width: 768px) {
+  }
+  
+  @media (max-width: 768px) {
     #home {
-        padding: 20px;
+      padding: 20px;
     }
-
+  
     .floating-pic {
-        top: 30px; /* Adjust the top position for smaller screens */
+      top: 30px;
     }
-
+  
     .floating-pic img {
-        max-width: 100px; /* Reduce the image size on smaller screens */
+      max-width: 100px;
     }
-
-    /* Other responsive styles */
-}
+  }
+  
 
 
 /* From Uiverse.io by Randdose */ 
@@ -314,28 +323,50 @@ span {
     align-items: flex-start;
     margin : 20px
 }
-.logo-marquee {
+.marquee {
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
     width: 100%;
-    display: flex;
-    animation: marquee 40s linear infinite;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 20px;
   }
   
-  .logo-container {
+  .marquee-content {
     display: flex;
-    justify-content: space-between;
-    width: 300%;
-    animation-delay: -20s;
+    animation: marquee 20s linear infinite;
   }
   
-  .logo-container a {
-    margin-right: 40px;
+  .marquee-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+  }
+  
+  .marquee-item a {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  
+  .marquee-item img {
+    max-width: 40px;
+    height: auto;
   }
   
   @keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-66.66%); }
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
   }
-  
   
 .left-panel {
     flex: 1;

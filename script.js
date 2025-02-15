@@ -26,7 +26,6 @@ function revealOnScroll() {
     });
 }
 document.addEventListener("DOMContentLoaded", function() {
-    // Display name letter by letter
     const name = "Sifat";
     const nameElement = document.getElementById("name");
     let nameIndex = 0;
@@ -35,13 +34,12 @@ document.addEventListener("DOMContentLoaded", function() {
         if (nameIndex < name.length) {
             nameElement.textContent += name[nameIndex];
             nameIndex++;
-            setTimeout(typeLetter, 150); // Adjust the speed of the typing effect here
+            setTimeout(typeLetter, 150);
         } else {
-            showProfession(); // Start showing professions after the name is fully displayed
+            showProfession();
         }
     }
 
-    // Professions to cycle through
     const professions = ["Web Developer", "Software Engineer", "Designer"];
     const professionElement = document.getElementById("profession");
     let professionIndex = 0;
@@ -49,10 +47,10 @@ document.addEventListener("DOMContentLoaded", function() {
     function showProfession() {
         professionElement.textContent = professions[professionIndex];
         professionIndex = (professionIndex + 1) % professions.length;
-        setTimeout(showProfession, 3000); // Adjust the time each profession is displayed
+        setTimeout(showProfession, 3000); 
     }
 
-    typeLetter(); // Start typing the name
+    typeLetter(); 
 });
 function openTab(evt, tabName) {
     // Hide all tabcontent by default
