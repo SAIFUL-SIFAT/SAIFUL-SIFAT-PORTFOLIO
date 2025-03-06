@@ -323,7 +323,77 @@ nav {
     align-items: flex-start;
     margin : 20px
 }
-.marquee {
+
+.tag-list {
+  width: 60rem;
+  font-family: "Montserrat";
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.inner {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  animation: loop 10s linear infinite;
+}
+
+/* Duplicate content inside .inner for a seamless effect */
+.inner::after {
+  content: "";
+  display: flex;
+}
+
+/* Tag styling */
+.tag {
+  display: flex;
+  align-items: center;
+  gap: 0 0.2rem;
+  color: #e2e8f0;
+  font-size: 0.9rem;
+  background-color: #334155;
+  padding: 0.7rem 1rem;
+  border-radius: 0.4rem;
+  box-shadow: 0 0.1rem 0.2rem #00000033, 0 0.1rem 0.5rem #0000004d,
+    0 0.2rem 1.5rem #00000066;
+}
+
+.tag span {
+  font-size: 1.2rem;
+  color: #64748b;
+}
+
+/* Fade effect */
+.fade {
+  position: absolute;
+  width: 5rem;
+  height: 100%;
+  top: 0;
+  pointer-events: none;
+}
+
+.fade-left {
+  left: 0;
+  background: linear-gradient(90deg, #1e293b 20%, transparent);
+}
+
+.fade-right {
+  right: 0;
+  background: linear-gradient(270deg, #1e293b 50%, transparent);
+}
+
+/* Smooth infinite scrolling */
+@keyframes loop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* .marquee {
     overflow: hidden;
     box-sizing: border-box;
     position: relative;
@@ -366,7 +436,7 @@ nav {
     100% {
       transform: translateX(-50%);
     }
-  }
+  } */
   
 .left-panel {
     flex: 1;
@@ -438,10 +508,13 @@ h3 {
 .project_section {
     padding: 40px 20px;
   }
+  .project_section h2 {
+    text-align: center;
+  }
   
   .project-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, 300px);
     grid-gap: 20px;
     justify-content: center;
     margin: 0 auto;
