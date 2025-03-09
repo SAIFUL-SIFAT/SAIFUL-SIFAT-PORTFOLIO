@@ -110,25 +110,28 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+
 document.addEventListener("DOMContentLoaded", function () {
     setTimeout(function () {
         document.querySelector(".loader").style.display = "none";
         document.querySelector("#main-content").style.display = "block";
-    }, 2000); // Adjust time based on animation duration
+    }, 3000); // Adjust time based on animation duration
 });
 
-
+window.onload = function() {
+    document.querySelector(".loader").style.display = "none";
+    document.querySelector("#main-content").style.display = "block";
+};
 
 window.addEventListener('scroll', revealOnScroll);
-revealOnScroll(); // to show elements on load if already in view
-
+revealOnScroll(); 
  document.querySelector('.Btn').addEventListener('click', function() {
         window.scrollTo({
             top: 0,
-            behavior: 'smooth' // Smooth scroll effect
+            behavior: 'smooth' 
         });
     
-});
+ });
 // Get the button
 // let backToTopBtn = document.getElementById("backToTopBtn");
 
