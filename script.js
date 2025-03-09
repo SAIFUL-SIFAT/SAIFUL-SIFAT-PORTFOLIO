@@ -1,3 +1,4 @@
+
 // Script to open About Me sections
 function openTab(evt, tabName) {
     var i, tabcontent, tablinks;
@@ -52,28 +53,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
     typeLetter(); 
 });
-function openTab(evt, tabName) {
-    // Hide all tabcontent by default
-    const tabcontent = document.getElementsByClassName("tabcontent");
-    for (let i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
+// function openTab(evt, tabName) {
+//     const tabcontent = document.getElementsByClassName("tabcontent");
+//     for (let i = 0; i < tabcontent.length; i++) {
+//         tabcontent[i].style.display = "none";
+//     }
 
-    // Remove the active class from all tablinks
-    const tablinks = document.getElementsByClassName("tablinks");
-    for (let i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
+//     const tablinks = document.getElementsByClassName("tablinks");
+//     for (let i = 0; i < tablinks.length; i++) {
+//         tablinks[i].className = tablinks[i].className.replace(" active", "");
+//     }
 
-    // Show the current tab and add an "active" class to the button that opened the tab
-    document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.className += " active";
-}
+//     document.getElementById(tabName).style.display = "block";
+//     evt.currentTarget.className += " active";
+// }
 
-// Automatically click the first tab to display content on page load
-document.addEventListener("DOMContentLoaded", () => {
-    document.querySelector('.tablinks').click();
-});
+// document.addEventListener("DOMContentLoaded", () => {
+//     document.querySelector('.tablinks').click();
+// });
 
 
 
@@ -113,15 +110,13 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-window.addEventListener('load', function() {
-    const loader = document.querySelector('.loader');
-    const mainContent = document.getElementById('main-content');
-
-    setTimeout(() => {
-        loader.style.display = 'none';
-        mainContent.style.display = 'block';
-    }, 3000); // Adjust the delay as needed
+document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(function () {
+        document.querySelector(".loader").style.display = "none";
+        document.querySelector("#main-content").style.display = "block";
+    }, 2000); // Adjust time based on animation duration
 });
+
 
 
 window.addEventListener('scroll', revealOnScroll);
@@ -135,23 +130,22 @@ revealOnScroll(); // to show elements on load if already in view
     
 });
 // Get the button
-let backToTopBtn = document.getElementById("backToTopBtn");
+// let backToTopBtn = document.getElementById("backToTopBtn");
 
-// Show the button when the user scrolls down 20px from the top
-window.onscroll = function() {
-    scrollFunction();
-};
+// window.onscroll = function() {
+//     scrollFunction();
+// };
 
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        backToTopBtn.style.display = "block"; // Show the button
-    } else {
-        backToTopBtn.style.display = "none"; // Hide the button
-    }
-}
+// function scrollFunction() {
+//     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+//         backToTopBtn.style.display = "block"; 
+//     } else {
+//         backToTopBtn.style.display = "none"; 
+//     }
+// }
 
 // When the user clicks on the button, scroll to the top of the document
-backToTopBtn.onclick = function() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
-};
+// backToTopBtn.onclick = function() {
+//     document.body.scrollTop = 0; // For Safari
+//     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+// };
