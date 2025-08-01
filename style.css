@@ -253,67 +253,68 @@ nav {
 
 
 /* From Uiverse.io by Randdose */ 
+/* From Uiverse.io by Randdose */ 
 .button {
-    all: unset;
-    display: flex;
-    align-items: center;
-    position: relative;
-    padding: 0.6em 2em;
-    border: mediumspringgreen solid 0.15em;
-    border-radius: 0.25em;
-    color: mediumspringgreen;
-    font-size: 0.6em;
-    font-weight: 600;
-    cursor: pointer;
-    overflow: hidden;
-    transition: border 300ms, color 300ms;
-    user-select: none;
+  all: unset;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0.3em 2em;
+  border: mediumspringgreen solid 0.15em;
+  border-radius: 0.25em;
+  color: mediumspringgreen;
+  font-size: 1.5em;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border 300ms, color 300ms;
+  user-select: none;
 }
 
 .button p {
-    z-index: 1;
+  z-index: 1;
 }
 
 .button:hover {
-    color: #212121;
+  color: #212121;
 }
 
 .button:active {
-    border-color: teal;
+  border-color: teal;
 }
 
 .button::after, .button::before {
-    content: "";
-    position: absolute;
-    width: 9em;
-    aspect-ratio: 1;
-    background: mediumspringgreen;
-    opacity: 50%;
-    border-radius: 50%;
-    transition: transform 500ms, background 300ms;
+  content: "";
+  position: absolute;
+  width: 9em;
+  aspect-ratio: 1;
+  background: mediumspringgreen;                                          
+  opacity: 50%;
+  border-radius: 50%;
+  transition: transform 500ms, background 300ms;
 }
 
 .button::before {
-    left: 0;
-    transform: translateX(-8em);
+  left: 0;
+  transform: translateX(-8em);
 }
 
 .button::after {
-    right: 0;
-    transform: translateX(8em);
+  right: 0;
+  transform: translateX(8em);
 }
 
 .button:hover:before {
-    transform: translateX(-1em);
+  transform: translateX(-1em);
 }
 
 .button:hover:after {
-    transform: translateX(1em);
+  transform: translateX(1em);
 }
 
 .button:active:before,
 .button:active:after {
-    background: teal;
+  background: teal;
 }
 
 /* About Section */
@@ -617,6 +618,49 @@ h3 {
     animation: slide-in-bottom .7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
+/* Scroll to top button styling with smooth transitions */
+.Btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transform: translateY(10px);
+}
+
+/* When button is shown */
+.Btn.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Alternative approach using visibility for better performance */
+.Btn.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.Btn.visible {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#footer{
+    background-color: #0a192f;
+    color: #ccd6f6;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    margin-top: 20px;
+}
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 /* Animation for the arrow */
 @keyframes slide-in-bottom {
     0% {

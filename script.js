@@ -123,15 +123,76 @@ window.onload = function() {
     document.querySelector("#main-content").style.display = "block";
 };
 
+// window.addEventListener('scroll', revealOnScroll);
+// revealOnScroll(); 
+//  document.querySelector('.Btn').addEventListener('click', function() {
+//         window.scrollTo({
+//             top: 0,
+//             behavior: 'smooth' 
+//         });
+    
+//  });
+
+// Optimized version using classes for better performance
+const scrollButton = document.querySelector('.Btn');
+const homeSection = document.querySelector('#home');
+
+// Hide button initially
+if (scrollButton) {
+    scrollButton.classList.add('hidden');
+}
+
+// Throttle function to improve performance
+function throttle(func, limit) {
+    let inThrottle;
+    return function() {
+        const args = arguments;
+        const context = this;
+        if (!inThrottle) {
+            func.apply(context, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    }
+}
+
+// Function to handle scroll behavior for button visibility
+function handleScrollButtonVisibility() {
+    if (!scrollButton || !homeSection) return;
+    
+    const homeHeight = homeSection.offsetHeight;
+    const scrollPosition = window.scrollY;
+    
+    // Show button when scrolled past home section
+    if (scrollPosition > homeHeight * 0.8) {
+        scrollButton.classList.remove('hidden');
+        scrollButton.classList.add('visible');
+    } else {
+        scrollButton.classList.remove('visible');
+        scrollButton.classList.add('hidden');
+    }
+}
+
+// Use throttled version for better performance
+const throttledScrollHandler = throttle(handleScrollButtonVisibility, 16); // ~60fps
+
+// Add scroll event listeners
+window.addEventListener('scroll', throttledScrollHandler);
 window.addEventListener('scroll', revealOnScroll);
-revealOnScroll(); 
- document.querySelector('.Btn').addEventListener('click', function() {
+
+// Initial calls
+revealOnScroll();
+handleScrollButtonVisibility();
+
+// Your existing button click functionality
+if (scrollButton) {
+    scrollButton.addEventListener('click', function() {
         window.scrollTo({
             top: 0,
             behavior: 'smooth' 
         });
-    
- });
+    });
+}
 // Get the button
 // let backToTopBtn = document.getElementById("backToTopBtn");
 
